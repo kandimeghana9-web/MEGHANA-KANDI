@@ -1,0 +1,250 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LearnPulse | Intelligent Learning Recommendation Engine</title>
+    <meta
+      name="description"
+      content="LearnPulse uses ranking-based recommendation logic to surface the most relevant learning opportunities from existing project data."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="header-inner">
+          <div class="brand-block" aria-label="LearnPulse home">
+            <div class="brand-mark">LP</div>
+            <div class="brand-copy">
+              <span class="brand-name">LearnPulse</span>
+            </div>
+          </div>
+
+          <label class="header-search" aria-label="Search learning resources">
+            <span class="search-icon">⌕</span>
+            <input
+              id="globalSearchInput"
+              type="text"
+              placeholder="What do you want to learn?"
+              aria-label="Search learning resources"
+            />
+          </label>
+
+          <nav class="header-nav" aria-label="Main navigation">
+            <a href="#recommended-grid">Recommendations</a>
+            <a href="#how-it-works">How It Works</a>
+            <div class="context-strip" id="userBadge">Loading context...</div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="dashboard">
+        <section class="hero panel">
+          <div class="hero-copy">
+            <div class="eyebrow">Learning recommendation engine</div>
+            <h1>Find what to learn next.</h1>
+            <p>Discover learning resources ranked by the LearnPulse recommendation engine.</p>
+            <div class="hero-actions">
+              <a href="#recommended-grid" class="primary-btn">Explore Recommendations</a>
+            </div>
+            <div class="hero-meta">
+              <span id="contextLabel">Context: loading</span>
+              <span id="generatedLabel">Generated: loading</span>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Learning snapshot">
+            <div class="hero-glow"></div>
+            <div class="metric-stack">
+              <div class="mini-stat">
+                <span>Total resources</span>
+                <strong id="totalItems">0</strong>
+              </div>
+              <div class="mini-stat">
+                <span>Top category</span>
+                <strong id="topCategory">-</strong>
+              </div>
+              <div class="mini-stat">
+                <span>Highest weight</span>
+                <strong id="highestWeight">0.00</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="category-section panel" aria-labelledby="category-discovery-title">
+          <div class="section-heading compact">
+            <div>
+              <p class="section-kicker">Explore</p>
+              <h2 id="category-discovery-title">Explore by category</h2>
+            </div>
+          </div>
+          <div class="category-chip-row" id="categoryChips" aria-live="polite"></div>
+        </section>
+
+        <section id="topRecommendation" class="featured panel">
+          <div class="section-heading compact">
+            <div>
+              <p class="section-kicker">Your top pick</p>
+              <h2>Top pick for you</h2>
+            </div>
+            <span class="badge-soft">#1 Recommended</span>
+          </div>
+          <div id="topRecommendationCard"></div>
+        </section>
+
+        <section class="controls panel" aria-label="Recommendation filters">
+          <div class="toolbar-row">
+            <label class="field search-field">
+              <span>Search</span>
+              <input id="searchInput" type="text" placeholder="Search topics or categories" />
+            </label>
+
+            <label class="field">
+              <span>Category</span>
+              <select id="categoryFilter">
+                <option value="all">All categories</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Difficulty</span>
+              <select id="difficultyFilter">
+                <option value="all">All levels</option>
+                <option value="Beginner">Beginner</option>
+                <option value="Intermediate">Intermediate</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Sort by</span>
+              <select id="sortSelect">
+                <option value="weight-desc">Ranking: highest first</option>
+                <option value="weight-asc">Ranking: lowest first</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section id="recommended-grid" class="discover panel">
+          <div class="section-heading compact">
+            <div>
+              <p class="section-kicker">Discover</p>
+              <h2>Recommended for you</h2>
+            </div>
+            <span class="badge-soft">Live recommendations</span>
+          </div>
+          <div id="allRecommendations" class="recommendation-grid"></div>
+        </section>
+
+        <section class="leaderboard panel">
+          <div class="section-heading compact">
+            <div>
+              <p class="section-kicker">Leaderboard</p>
+              <h2>Top 5 Learning Picks</h2>
+            </div>
+            <span class="badge-soft">Ranked by weight</span>
+          </div>
+          <div id="topRankings" class="leaderboard-grid"></div>
+        </section>
+
+        <section class="stats-grid" aria-label="Learning snapshot metrics">
+          <article class="stat-card">
+            <span>Total resources</span>
+            <strong id="totalResourcesStat">0</strong>
+          </article>
+          <article class="stat-card">
+            <span>Top category</span>
+            <strong id="topCategoryStat">-</strong>
+          </article>
+          <article class="stat-card">
+            <span>Highest weight</span>
+            <strong id="highestWeightStat">0.00</strong>
+          </article>
+          <article class="stat-card">
+            <span>Number of categories</span>
+            <strong id="categoryCountStat">0</strong>
+          </article>
+        </section>
+
+        <section id="why-learnpulse" class="insight-layout">
+          <div class="panel why-panel">
+            <div class="section-heading compact">
+              <div>
+                <p class="section-kicker">Why LearnPulse?</p>
+                <h2>Less searching. Better learning.</h2>
+              </div>
+            </div>
+            <p class="why-copy">
+              LearnPulse organizes learning resources, ranks the strongest recommendations, and makes the
+              most relevant options easier to discover without overwhelming the learner.
+            </p>
+            <ul class="feature-list">
+              <li>
+                <strong>Organized learning discovery</strong>
+                <span>Resources are grouped into clear categories that make browsing easier.</span>
+              </li>
+              <li>
+                <strong>Transparent ranking</strong>
+                <span>Each recommendation shows the real score and the reason behind its ranking.</span>
+              </li>
+              <li>
+                <strong>Focused recommendations</strong>
+                <span>High-value learning opportunities rise to the top so students can decide faster.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div id="how-it-works" class="panel process-panel">
+            <div class="section-heading compact">
+              <div>
+                <p class="section-kicker">How it works</p>
+                <h2>From discovery to recommendation</h2>
+              </div>
+            </div>
+
+            <div class="process-grid">
+              <div class="process-step">
+                <span class="step-number">01</span>
+                <h3>Discover</h3>
+                <p>Explore learning topics by category and search intent.</p>
+              </div>
+              <div class="process-arrow">→</div>
+              <div class="process-step">
+                <span class="step-number">02</span>
+                <h3>Evaluate</h3>
+                <p>Review the signal, difficulty, and the recommendation reason.</p>
+              </div>
+              <div class="process-arrow">→</div>
+              <div class="process-step">
+                <span class="step-number">03</span>
+                <h3>Rank</h3>
+                <p>LearnPulse sorts opportunities using the real ranking weights.</p>
+              </div>
+              <div class="process-arrow">→</div>
+              <div class="process-step">
+                <span class="step-number">04</span>
+                <h3>Recommend</h3>
+                <p>Strongest options rise to the top with a clear recommendation flow.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="brand-block footer-brand">
+          <div class="brand-mark small">LP</div>
+          <div>
+            <p class="brand-name">LearnPulse</p>
+          </div>
+        </div>
+        <span>Learning discovery platform</span>
+        <span>Built for focused student learning</span>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
