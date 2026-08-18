@@ -1,0 +1,117 @@
+{
+  "user_id": "anon_student_123",
+  "generated_at": "2026-08-18T12:00:00Z",
+  "summary": {
+    "total_items": 8,
+    "top_recommendation": "hld-001",
+    "top_category": "HLD",
+    "highest_weight": 0.95,
+    "recommended_categories": ["HLD", "Java", "Hardware", "AI", "Cybersecurity"]
+  },
+  "items": [
+    {
+      "id": "hld-001",
+      "title": "Practical System Design: 7 concepts every engineer uses daily",
+      "category": "HLD",
+      "weight": 0.95,
+      "difficulty": "Intermediate",
+      "confidence": "High",
+      "reason": "Signals: SE lifestyle + interview + hardware; high career utility",
+      "anti_hype_score": 0.9,
+      "tags": ["system-design", "career", "reliability"],
+      "url": "https://example.com/reel/hld-001",
+      "timestamp": "2026-08-18T12:00:00Z"
+    },
+    {
+      "id": "java-debug-002",
+      "title": "Debugging Java Backends: tracing NPEs, logging, and repair patterns",
+      "category": "Java",
+      "weight": 0.88,
+      "difficulty": "Intermediate",
+      "confidence": "High",
+      "reason": "Direct match with Java NPE meme; practical skill upgrade",
+      "anti_hype_score": 0.85,
+      "tags": ["java", "debugging", "backend"],
+      "url": "https://example.com/reel/java-debug-002",
+      "timestamp": "2026-08-18T12:00:00Z"
+    },
+    {
+      "id": "hw-laptop-003",
+      "title": "Choosing a Dev Laptop: CPU, RAM, thermals and what matters for coding",
+      "category": "Hardware",
+      "weight": 0.82,
+      "difficulty": "Beginner",
+      "confidence": "High",
+      "reason": "Direct device-signal from laptop comparison reel",
+      "anti_hype_score": 0.7,
+      "tags": ["hardware", "productivity", "laptops"],
+      "url": "https://example.com/reel/hw-laptop-003",
+      "timestamp": "2026-08-18T12:00:00Z"
+    },
+    {
+      "id": "ai-eval-004",
+      "title": "How to evaluate AI tools and build a portfolio project responsibly",
+      "category": "AI",
+      "weight": 0.76,
+      "difficulty": "Intermediate",
+      "confidence": "Medium",
+      "reason": "Counters listicle/hype interest; focuses on evaluation and portfolio",
+      "anti_hype_score": 0.95,
+      "tags": ["ai", "careers", "portfolio"],
+      "url": "https://example.com/reel/ai-eval-004",
+      "timestamp": "2026-08-18T12:00:00Z"
+    },
+    {
+      "id": "sec-basics-005",
+      "title": "Web Security Basics: common vulnerabilities, responsible disclosure, and patching workflow",
+      "category": "Cybersecurity",
+      "weight": 0.7,
+      "difficulty": "Intermediate",
+      "confidence": "High",
+      "reason": "CVE/news reel indicates security interest; practical defense focus",
+      "anti_hype_score": 0.8,
+      "tags": ["security", "vulnerabilities", "patching"],
+      "url": "https://example.com/reel/sec-basics-005",
+      "timestamp": "2026-08-18T12:00:00Z"
+    },
+    {
+      "id": "audio-ai-006",
+      "title": "Intro to Generative Audio Models: how voice models work (safely)",
+      "category": "AI",
+      "weight": 0.62,
+      "difficulty": "Intermediate",
+      "confidence": "Medium",
+      "reason": "Gaming + AI voice mod interest → generative audio topic",
+      "anti_hype_score": 0.85,
+      "tags": ["ai", "audio", "generative"],
+      "url": "https://example.com/reel/audio-ai-006",
+      "timestamp": "2026-08-18T12:00:00Z"
+    },
+    {
+      "id": "dsa-sort-007",
+      "title": "Sorting algorithms: Big-O, when to use merge vs quicksort (visual + code)",
+      "category": "DSA",
+      "weight": 0.58,
+      "difficulty": "Beginner",
+      "confidence": "High",
+      "reason": "Visual sorting reel → DSA learning preference",
+      "anti_hype_score": 0.6,
+      "tags": ["algorithms", "sorting", "interview"],
+      "url": "https://example.com/reel/dsa-sort-007",
+      "timestamp": "2026-08-18T12:00:00Z"
+    },
+    {
+      "id": "js-debug-008",
+      "title": "Practical JavaScript Debugging with DevTools — breakpoints, scopes, network",
+      "category": "Other",
+      "weight": 0.5,
+      "difficulty": "Beginner",
+      "confidence": "High",
+      "reason": "JS meme + casual tinkering → practical debugging skill",
+      "anti_hype_score": 0.6,
+      "tags": ["javascript", "debugging", "devtools"],
+      "url": "https://example.com/reel/js-debug-008",
+      "timestamp": "2026-08-18T12:00:00Z"
+    }
+  ]
+}
